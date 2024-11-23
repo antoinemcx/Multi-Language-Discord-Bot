@@ -39,7 +39,7 @@ $ npm install
 
 ### Start the bot
 ```sh
-& node index.js
+$ node index.js
 ```
 
 <br>
