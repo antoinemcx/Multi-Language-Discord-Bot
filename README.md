@@ -1,6 +1,6 @@
 <h1 align="center">Multi-Language-Discord-Bot</h1>
 <p align="center">
-    Command &amp; event handler, Multi-language Discord Bot (v14) example (fr/en) by <a href="https://github.com/antoinemcx">Melio</a>.
+    Multi-language Discord Bot (v14) example (fr/en) with command &amp; event handler, by <a href="https://github.com/antoinemcx">Melio</a>.
     <br>
     If you like the project, feel free to put a ⭐ for better referencing ; If you need help, join the <a href="https://antoinemcx.fr/discord">support server</a>.
 </p>
@@ -19,6 +19,13 @@
 
    <br>
 </p>
+
+## About
+This program is an example of internationalization integration for a Discord Bot.  
+It's a very simplified example of how to implement several languages in one application.
+
+Again with a focus on simple code, data is stored with SQLite, via the [quick.db](https://www.npmjs.com/package/quick.db) package.  
+Of course, you're free to implement any other DBMS (database management system).
 
 ## Starting the project
 
@@ -39,7 +46,7 @@ $ npm install
 
 ### Start the bot
 ```sh
-& node index.js
+$ node index.js
 ```
 
 <br>
@@ -48,3 +55,5 @@ $ npm install
 
 For any errors found, please contact me [here](https://discord.com/invite/G6WQsMQShZ) or do a pull request.  
 This repository is licensed under the MIT License. See the `LICENSE` file ([here](LICENSE)) for more information.
+
+###### This repository was made with ❤️ from my [Structure-Discord-Bot](https://github.com/antoinemcx/Structure-Discord-Bot/tree/master) template repository.
