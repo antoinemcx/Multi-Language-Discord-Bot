@@ -1,6 +1,8 @@
-const { Client, Collection } = require("discord.js");
+const { Client, Collection, GatewayIntentBits } = require("discord.js");
 const bot = new Client({
-    disableEveryone: true,
+  allowedMentions: { parse: ['users', 'roles'] },
+  fetchAllMembers: false,
+  intents: [ GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent ],
 });
 const fs = require('fs');
 require('dotenv').config()
