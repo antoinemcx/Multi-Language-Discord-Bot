@@ -1,3 +1,5 @@
+const { QuickDB } = require("quick.db");
+
 module.exports = {
     conf: {
         name: "setlang",
@@ -8,19 +10,17 @@ module.exports = {
         dir: "lang",
     }, 
     run: async (bot, message, args) => {
-        const db = require("quick.db");
+        const db = new QuickDB();
+        await db.init();
 
         if(!args[0]) return message.channel.send(bot.language.SETLANG_ERR)
 
-        let lang;
         if(args[0] === "en") {
-            db.set(`lang_${message.guild.id}`, "en")
+            await db.set(`lang_${message.guild.id}`, { lang: "en" })
             message.channel.send(bot.language.SETLANG_SUCCESS[1])
-        }
-        
-        if(args[0] === "fr") {
-            db.set(`lang_${message.guild.id}`, null)
-        message.channel.send(bot.language.SETLANG_SUCCESS[0])
+        } else if(args[0] === "fr") {
+            await db.set(`lang_${message.guild.id}`, { lang: "fr" });
+            message.channel.send(bot.language.SETLANG_SUCCESS[0])
         }
     }
 }
