@@ -3,9 +3,10 @@ const prefix = process.env.PREFIX;
 
 module.exports = async (bot) => {  
       bot.logger.info("-----------------------------------------")
-      bot.logger.info(`[!] Connexion effectuée sur ${bot.user.username} (${process.env.NAME}) !`)
+      bot.logger.info(`[!] Successfully connected on ${bot.user.username} !`)
       bot.logger.info("-----------------------------------------")
 
-      setInterval(() =>
-      bot.user.setActivity(`${process.env.NAME} | ${prefix}`, { type: "PLAYING" }))
+      setInterval(() => {
+            bot.user.setActivity(`${process.env.NAME} | ${prefix} | github.com/antoinemcx`, { type: "PLAYING" });
+      });
 };

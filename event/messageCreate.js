@@ -26,7 +26,6 @@ module.exports = async (bot, message) => {
     const args = message.content.split(' ').slice(1);
     let cmd;
 
-    
     if (bot.commandes.has(command)) {
         cmd = bot.commandes.get(command);
     } else if (bot.aliases.has(command)) {
@@ -49,7 +48,8 @@ module.exports = async (bot, message) => {
         const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
     if (now < expirationTime) {
         const timeLeft = (expirationTime - now) / 1000;
-        return message.channel.send(bot.language.COOLDOWN_ERR.replace(/<time>/g, timeLeft.toFixed(1)).replace(/<cmd>/g, props.conf.name));
+        return message.channel.send(bot.language.COOLDOWN_ERR.replace(/<time>/g, timeLeft.toFixed(1))
+                                                             .replace(/<cmd>/g, props.conf.name));
     }
     }
     timestamps.set(message.author.id, now);
