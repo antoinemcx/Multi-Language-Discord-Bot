@@ -13,14 +13,20 @@ module.exports = {
         const db = new QuickDB();
         await db.init();
 
-        if(!args[0]) return message.channel.send(bot.language.SETLANG_ERR)
+        let messageToSend;
 
-        if(args[0] === "en") {
+        if(!args[0]) {
+            messageToSend = bot.language.SETLANG_ERR;
+        } else if(args[0] === "en") {
             await db.set(`lang_${message.guild.id}`, { lang: "en" })
-            message.channel.send(bot.language.SETLANG_SUCCESS[1])
+            messageToSend = bot.language.SETLANG_SUCCESS[1];
         } else if(args[0] === "fr") {
             await db.set(`lang_${message.guild.id}`, { lang: "fr" });
-            message.channel.send(bot.language.SETLANG_SUCCESS[0])
+            messageToSend = bot.language.SETLANG_SUCCESS[0];
+        } else {
+            messageToSend = bot.language.SETLANG_ERR;
         }
+
+        message.channel.send(messageToSend);
     }
 }

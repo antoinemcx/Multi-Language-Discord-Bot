@@ -4,7 +4,7 @@ module.exports= {
     COOLDOWN_ERR: `Vous devez attendre **<time>** seconde(s) de plus avant d'utiliser la commande \`<cmd>\``,
 
     // SETLANG COMMAND //
-    SETLANG_ERR: "Veuillez indiquer une nouvelle langue à saisir",
+    SETLANG_ERR: "Veuillez indiquer une nouvelle langue valide (fr ou en) à saisir",
     SETLANG_SUCCESS:[
         "La langue est désormais en français",
         "The language is now english",
